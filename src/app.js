@@ -6,7 +6,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/health", (req, res) => {
-    res.json({ status: 'funcionando' });
+    res.json({ status: 'ok' });
 });
 
 app.get('/api/tareas', (req, res) => {
@@ -15,6 +15,10 @@ app.get('/api/tareas', (req, res) => {
         { id: 2, titulo: "Desplegar en Render", completada: false },
         { id: 3, titulo: "Configurar github actions", completada: true }
     ]);
+});
+
+app.get("/api/saludo", (req, res) => {
+    res.json({ message: "Hola desde el pipeline de ci/cd" });
 });
 
 module.exports = app;
